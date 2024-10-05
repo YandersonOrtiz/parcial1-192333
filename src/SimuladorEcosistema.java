@@ -4,9 +4,10 @@ public class SimuladorEcosistema {
     public static void main(String[] args) {
         char[][] ecosistema = new char[20][20];
         Random random = new Random();
+        int longitud=ecosistema.length;
 
         // Inicializar ecosistema
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < longitud; i++) {
             for (int j = 0; j < 20; j++) {
                 double prob = random.nextDouble();
                 if (prob < 0.1) ecosistema[i][j] = 'A'; // Árbol
@@ -16,11 +17,11 @@ public class SimuladorEcosistema {
         }
 
         // Simulación por 20 días
-        for (int dia = 1; dia <= 20; dia++) {
+        for (int dia = 1; dia <= longitud; dia++) {
             System.out.println("Día " + dia);
             
             // Mostrar ecosistema
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < longitud; i++) {
                 for (int j = 0; j < 20; j++) {
                     System.out.print(ecosistema[i][j] + " ");
                 }
@@ -29,7 +30,7 @@ public class SimuladorEcosistema {
 
             // Actualizar ecosistema
             char[][] nuevoEcosistema = new char[20][20];
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < longitud; i++) {
                 for (int j = 0; j < 20; j++) {
                     // Contar vecinos (integrado directamente aquí)
                     int vecinos = 0;
